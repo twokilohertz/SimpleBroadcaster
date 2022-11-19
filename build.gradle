@@ -1,0 +1,43 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version '1.7.21'
+    id 'com.github.johnrengelman.shadow' version '7.1.2'
+    id 'application'
+}
+
+group = 'today.theladpack.simplebroadcast'
+version = '0.1.0'
+
+repositories {
+    mavenCentral()
+
+    // Information sourced from here: https://www.spigotmc.org/wiki/spigot-gradle/
+    maven {
+        url = 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/'
+
+        content {
+            includeGroup 'org.bukkit'
+            includeGroup 'org.spigotmc'
+        }
+    }
+
+    maven { url = 'https://oss.sonatype.org/content/repositories/snapshots' }
+    maven { url = 'https://oss.sonatype.org/content/repositories/central' }
+}
+
+dependencies {
+    // Also from the spigotmc.org link above
+    compileOnly 'org.spigotmc:spigot-api:1.19.2-R0.1-SNAPSHOT' // The Spigot API with no shadowing. Requires the OSS repo.
+    shadow 'org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.7.20'
+}
+
+compileKotlin {
+    kotlinOptions.jvmTarget = '17'
+}
+
+shadowJar {
+    minimize()
+}
+
+application {
+    mainClassName = 'today.theladpack.simplebroadcast.SimpleBroadcast'
+}

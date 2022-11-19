@@ -1,0 +1,11 @@
+main: today.theladpack.simplebroadcast.SimpleBroadcast
+name: SimpleBroadcast
+version: 0.1.0
+description: Rotate messages to be globally broadcast to all players on the server
+author: Adam (twokilohertz)
+website: theladpack.today
+
+api-version: 1.19
+load: POSTWORLD
+
+# https://www.spigotmc.org/wiki/plugin-yml/

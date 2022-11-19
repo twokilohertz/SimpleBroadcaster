@@ -1,0 +1,10 @@
+# SimpleBroadcast configuration file
+
+# Time interval in between message broadcasts to chat (in seconds)
+interval: 3
+
+# Array of messages to broadcast to chat. They'll be cycled each time & loop back to the start after the end is reached
+messages: ["Example message 1", "Example message 2", "Another message"]
+
+# Array of player UUIDs to not send messages to (NOT YET IMPLEMENTED)
+ignore: ["069a79f4-44e9-4726-a5be-fca90e38aaf5"]
